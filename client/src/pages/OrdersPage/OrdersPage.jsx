@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import './OrdersPage.scss'
-import Basket from '../../assets/basket/basket.svg'
 import { endpoints } from '../../api';
 import { toastError } from '../../utils/toasts';
 import Card from '../../components/Card/Card';
@@ -28,8 +27,6 @@ const OrdersPage = () => {
                 toastError(res.data.error)
                 return
             }
-
-            console.log(res.data)
 
             if (res.data.orders) {
                 dispatch(setOrders(res.data.orders))
