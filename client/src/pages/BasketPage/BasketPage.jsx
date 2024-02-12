@@ -97,7 +97,7 @@ const BasketPage = () => {
                             whileTap={{ scale: 0.98 }}
                         >
                             { isFetching ? (
-                                <LoadSpinner color="#ffffff" size='md' />
+                                <LoadSpinner color="#343434" size='md' />
                             ) : 
                                 "Купить!" }
                         </motion.button>
