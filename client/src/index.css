@@ -2,9 +2,26 @@
 
 body {
   background-color: #09090B !important;
-  overflow-y: hidden;
 }
 
+
+/* Scrollbar */
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: lighten(#09090B, 10);
+}
+
+
+body::-webkit-scrollbar-thumb {
+  background: #2b2b2b;
+  border-radius: 8px;
+}
+
+/* Global */
 
 * {
   margin: 0;
@@ -20,7 +37,6 @@ body {
 }
 
 
-/* Global */
 
 a {
   text-decoration: none;
