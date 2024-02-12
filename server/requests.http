@@ -1,0 +1,53 @@
+### Users
+POST http://localhost:5000/api/users/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Vanua",
+    "email": "vanya12346@gmail.com",
+    "password": "password12345",
+    "phone": 89122725850
+}
+
+### Products
+POST http://localhost:5000/api/products/create HTTP/1.1
+content-type: application/json
+
+{
+    "id": "1",
+    "title": "Продукт 1",
+    "description": "Описание",
+    "price": 140,
+    "count": 4,
+}
+
+### Products
+GET http://localhost:5000/api/products/ HTTP/1.1
+content-type: application/json
+
+### Orders
+POST http://localhost:5000/api/orders/create HTTP/1.1
+content-type: application/json
+
+{
+    "userId": 23,
+    "orders": [{"id": 1, "name": "product name", "description": "product description", "price": 1200, "count": 3, "imageLink": "http://localhost:5000/img/avatar-test"},
+    {"id": 2, "name": "product name", "description": "product description", "price": 1200, "count": 3, "imageLink": "http://localhost:5000/img/avatar-test"},
+    {"id": 3, "name": "product name", "description": "product description", "price": 1200, "count": 3, "imageLink": "http://localhost:5000/img/avatar-test"},
+    {"id": 4, "name": "product name", "description": "product description", "price": 1200, "count": 3, "imageLink": "http://localhost:5000/img/avatar-test"}],
+    "totalCount": 14400
+}
+
+
+### Orders
+GET http://localhost:5000/api/orders/SPFBuphh69940 HTTP/1.1
+content-type: application/json
+
+###
+POST http://localhost:5000/api/orders/remove-item HTTP/1.1
+content-type: application/json
+
+{
+    "id": 3,
+    "uid": "SPFBuphh69940"
+}
