@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, make_response, send_file
+from flask import Flask, jsonify, request, make_response
 from flask_pymongo import PyMongo
 from flask_cors import CORS
 from random import randint
