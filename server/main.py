@@ -110,35 +110,6 @@ def signin_user():
         print("Some Internal Error")
 
 
-# create new product
-@app.route("/api/products/create", methods=["POST"])
-def create_new_product():
-    try:
-        # FIX: doesn't work!!! 
-        # print(request.get_json())
-
-        # response = make_response()
-        # request_data = {}
-
-        # if (request.data): 
-        #     request_data = request.get_json()
-        
-        # print(request_data)
-
-        # request_data = request.get_json()
-
-        # db.products.insert_one(request_data)
-
-        response = jsonify({
-            'message': 'Новый продукт успешно создан'
-        })
-
-        return response
-    except:
-        print("Some Internal Error")
-
-
-
 @app.route("/api/products/", methods=["GET"])
 def get_all_products():
     try:        
@@ -157,7 +128,6 @@ def get_all_products():
                 { "id": 8, "title": "Cyberpunk 2077", "description": "научно-фантастическая ролевая игра, действие которой проходит в городе Найт-Сити, где игрок может свободно исследовать его и выполнять задания", "price": 990, "warehouseCount": 2 },
                 { "id": 9, "title": "Sims 4", "description": "симулятор жизни, где игроки могут создать своего персонажа, построить дом и управлять жизнью своего сима", "price": 590, "warehouseCount": 10 },
                 { "id": 10, "title": "Witcher 3: Wild Hunt", "description": "ролевая игра с открытым миром и нелинейным сюжетом, действие которой разворачивается во вселенной Ведьмака", "price": 1490, "warehouseCount": 8 },
-                { "id": 11, "title": "Witcher 3: Wild Hunt", "description": "ролевая игра с открытым миром и нелинейным сюжетом, действие которой разворачивается во вселенной Ведьмака", "price": 1490, "warehouseCount": 8 },
             ]
         })
 

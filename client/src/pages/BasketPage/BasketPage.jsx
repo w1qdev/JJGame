@@ -30,7 +30,6 @@ const BasketPage = () => {
     const totalPrice = getBasketTotalPrice()
 
     const makeOrder = async () => {
-        setIsFetching(prev => !prev)
         const storagedName = localStorage.getItem('name') 
         const storagedEmail = localStorage.getItem('email') 
         if (storagedName === '' || storagedEmail === '') {
@@ -40,6 +39,7 @@ const BasketPage = () => {
 
         const uid = localStorage.getItem('uid')
 
+        setIsFetching(prev => !prev)
         await axios.post(`${endpoints.SERVER_ORIGIN_URI}${endpoints.ORDERS.ROUTE}${endpoints.ORDERS.MAKE_ORDER}`, { basketPrice: totalPrice, basketStore, uid })
         .then(res => {
             dispatch(clearBasket())
@@ -97,7 +97,7 @@ const BasketPage = () => {
                             whileTap={{ scale: 0.98 }}
                         >
                             { isFetching ? (
-                                <LoadSpinner color="#ffffff" size='md' />
+                                <LoadSpinner color="#343434" size='md' />
                             ) : 
                                 "Купить!" }
                         </motion.button>
