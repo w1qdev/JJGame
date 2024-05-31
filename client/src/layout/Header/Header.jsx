@@ -17,7 +17,6 @@ import './Header.scss'
 import { useState } from 'react';
 import { clearOrders } from '../../store/slices/ordersSlice';
 import { clearBasket } from '../../store/slices/basketSlice';
-import HappyShopLogo from '../../assets/header/logo.svg'
 
 
 const Header = () => {

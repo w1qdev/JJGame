@@ -3,11 +3,10 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import './OrdersPage.scss'
-import Basket from '../../assets/basket/basket.svg'
 import { endpoints } from '../../api';
 import { toastError } from '../../utils/toasts';
 import Card from '../../components/Card/Card';
-import { setOrders } from '../../store/slices/ordersSlice';
+import { setOrders, clearOrders } from '../../store/slices/ordersSlice';
 import { useDispatch, useSelector } from 'react-redux'
 import LoadSpinner from '../../components/LoadSpinner/LoadSpinner';
 
@@ -17,19 +16,6 @@ const OrdersPage = () => {
     const dispatch = useDispatch()
     const userID = localStorage.getItem('uid')
     const [isFetching, setIsFetching] = useState(false)
-    
-
-    const getOrdersTotalPrice = () => {
-        let totalPrice = 0
-
-        ordersStore.forEach(item => {
-            totalPrice += item.price * item.count
-        })
-
-        return totalPrice
-    }
-
-    const totalPrice = getOrdersTotalPrice()
 
 
     useEffect(() => {
@@ -44,6 +30,8 @@ const OrdersPage = () => {
 
             if (res.data.orders) {
                 dispatch(setOrders(res.data.orders))
+            } else {
+                dispatch(clearOrders())
             }
         })
         .catch(err => {
